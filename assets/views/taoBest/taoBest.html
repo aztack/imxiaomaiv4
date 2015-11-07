@@ -1,0 +1,46 @@
+<div class="list-main main-both" ng-controller="taoBestNavCtrl">
+  <div class="list-category" subname="{{'taoBestNavHeightUpdate'}}" xiaomai-iscroll style="top:0;bottom:0">
+    <ul>
+      <li class="nav nav-parent" ng-repeat="nav in menus">
+        <p class="arrow-down"
+          ng-class="{'arrow-up':!nav.isShowSub}"
+        ng-click="onTopMenuClicked($event,nav)">{{nav.menuName}}</p>
+        <ul ng-if="nav.childrenMenuList.length > 0" ng-show="nav.isShowSub">
+          <li ng-repeat="subnav in nav.childrenMenuList"
+            ng-click="onSubMenuClicked($event, subnav)"
+            ng-class="{'nav-checked':isSubMenuSelected(subnav)}"
+          class="nav-sub">{{subnav.menuName}}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div style="top:0;bottom:0" class="list-product" down-tip-cls="navmain-downtip" pubname="taoBest:loadNextPage" subname="taoBest:heightUpdate" up-tip-cls="navmain-uptip" xiaomai-iscroll>
+    <div class="GoodsCont">
+      <div class="errortip" ng-if="haserror">{{errortip}}</div>
+      <div  ng-if="isloading" class="loading">
+        正在加载
+      </div>
+      <!-- 商品 -->
+      <div class="goods-liste" ng-if="currentSubMenuType==2">
+        <a class="GoodCont" ng-repeat="item in list" href="{{item.clickUrl}}">
+          <div class="recommendCateGood goodlistitem-row">
+            <div class="imgCont" ng-style='{"background-image":"url("+item.imageUrl+")"}'></div>
+            <div class="details">
+              <p class="goodname ng-binding">{{item.goodsName}}</p>
+              <p class="priceCont">
+                <span class="new-price">&yen;<i>{{item.reservePrice}}</i></span>
+                <span class="old-price">&yen;{{item.zkFinalPrice}}</span>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- 活动 -->
+      <ul class="category-active-list" ng-if="currentSubMenuType==1">
+        <li class="tag-active" ng-repeat="item in list" ng-style='{"background-image":"url("+item.imageUrl+")"}'>
+          <a href="{{item.activityUrl}}" style="display:block;height:100%;"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

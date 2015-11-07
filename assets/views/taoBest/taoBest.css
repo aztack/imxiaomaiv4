@@ -1,0 +1,12 @@
+/* 淘精品 */
+
+@media only screen and (max-width: 320px) and (-webkit-min-device-pixel-ratio:2) {
+    /* 屏幕太窄时不显示箭头 */
+    .arrow-up:after {
+        display: none;
+    }
+}
+
+.list-main .list-category .nav-super {
+    height: auto !important;
+}

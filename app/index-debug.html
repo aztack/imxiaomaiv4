@@ -4,32 +4,32 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>小麦商城V4</title>
-    <link href="http://172.16.101.27:8000/assets/reset.css" rel="stylesheet">
+    <link href="/assets/reset.css" rel="stylesheet">
   </head>
   <body>
     <div ng-app="xiaomaiApp" class="mod-wrap" ui-view></div>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/lib/angular.min.js"></script>
     <script type="text/javascript">
       window.__SYS_CONF = {
         dependent_modules: [
           'oc.lazyLoad', 'ui.router','ipCookie','ksSwiper','ngTouch'
         ],
-        'resourceUrl':'http://172.16.101.27:8000/assets/'
+        'resourceUrl':'/assets/'
       };
       var xiaomaiApp = angular.module('xiaomaiApp', window.__SYS_CONF[
         'dependent_modules']);
     </script>
     <!--
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/template/templates.js"></script>
+    <script type="text/javascript" src="http://172.16.101.7/assets/template/templates.js"></script>
   -->
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/angular-cookie.min.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/oclazyload.min.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/jweixin-1.0.0.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/swiper.min.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/angular-swiper.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/iscroll-probe.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/lib/angular-touch.min.js"></script>
-    <script type="text/javascript" src="http://172.16.101.27:8000/assets/main-debug.js"></script>
+    <script src="/assets/lib/angular-ui-router.min.js"></script>
+    <script src="/assets/lib/angular-cookie.min.js"></script>
+    <script src="/assets/lib/oclazyload.min.js"></script>
+    <script src="/assets/lib/jweixin-1.0.0.js"></script>
+    <script src="/assets/lib/swiper.min.js"></script>
+    <script src="/assets/lib/angular-swiper.js"></script>
+    <script src="/assets/lib/iscroll-probe.js"></script>
+    <script src="/assets/lib/angular-touch.min.js"></script>
+    <script src="/assets/main-debug.js"></script>
   </body>
 </html>

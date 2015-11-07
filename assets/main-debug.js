@@ -91,6 +91,27 @@ angular.module('xiaomaiApp').config([
           }]
         }
       })
+      .state('root.taoBest',{
+        url:'taoBest',
+        templateUrl:'../assets/views/taoBest/taoBest.html',
+        resolve:{
+          loadCtrl:['$ocLazyLoad',function($ocLazyLoad){
+            return $ocLazyLoad.load({
+              name:'xiaomaiApp',
+              files:[
+                window.__SYS_CONF.resourceUrl +
+                'views/taoBest/taoBest.js?v='/* + (+new Date)*/,
+                 window.__SYS_CONF.resourceUrl +
+                'views/taoBest/taoBest.css?v='/* + (+new Date)*/,
+                window.__SYS_CONF.resourceUrl +
+                'views/nav/nav.css',
+                window.__SYS_CONF.resourceUrl +
+                'views/all/all.css'
+              ]
+            })
+          }]
+        }
+      })
       .state('root.buy', {
         url: 'buy/',
         controller: 'buyCtrl',
